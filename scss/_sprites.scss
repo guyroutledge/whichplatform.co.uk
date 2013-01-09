@@ -1,0 +1,40 @@
+/**************************
+	$$ Sprites
+**************************/
+
+// Compass Sprites are awesome. This is how to use them:
+
+// Put all your images in a sub-directory of the compass images directory -
+// in this case it's "/img" but you can check by looking in the config.rb file.
+// Compass will auto-generate a sprite image and classes that target each element of
+// the sprite using the directory as a prefix and the filename as a suffix.
+// Images must be in png format.
+
+// For example create a directory called 'icons' containing 'share-twitter.png'.
+// Compass will create a class name '.icons-share-twitter' referencing the correct
+// background position needed to display the 'share-twitter' icon as a background
+// image to an element. Optionally (and recommended) you can have Compass add the
+// required dimensions to each generated class.
+
+
+// Sample compiled output:
+
+// /* line 27, sprites */
+// .icons-sprite, .icons-share-twitter {
+//   background: url('/images/icons-s018a999c25.png') no-repeat;
+// }
+
+// /* line 60, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+// .icons-share-twitter {
+//   background-position: 0 0;
+//   height: 25px;
+//   width: 25px;
+
+
+/**************************
+	$$ Icons Sprite
+**************************/
+
+// $icons-sprite-dimensions: true;
+// @import "icons/*.png";
+// @include all-icons-sprites;
