@@ -1,26 +1,59 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Which Platform? at Clapham Junction</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<?php include_once('inc/header.php') ?>
 
-        <link rel="stylesheet" href="css/screen.css">
-    </head>
-    <body>
-        
-        <?php // Scripts at the bottom for performance ?>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-        <script src="js/app.js"></script>
+	<div class="search">
+		<nav class="nav-search">
+			<a href="#"></a>
+			<a href="#"></a>
+		</nav>
+		<form id="search-form">
+			<label for="search">Search:</label>
+			<input type="search" id="search" placeholder="eg. Gatwick Airport">
+		</form>
+	</div>
 
-        <?php // Google Analytics: change UA-XXXXX-X to be your site's ID. ?>
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
-</html>
+	<nav class="nav nav-alphabetical">
+		<?php include_once('inc/nav-alphabetical.php') ?>
+	</nav>
+
+	<div id="result-container" class="result-container">
+		<ul class="destinations">
+			<li>
+				<a href="#">Addlestone</a>
+				<div class="entry-content is-hidden">
+					<ul class="platforms">
+						<li>Platform 5</li>
+						<li>Platform 6</li>
+						<li>Platform 11</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#">Aldershot</a>
+				<div class="entry-content is-hidden">
+					<ul class="platforms">
+						<li>Platform 9</li>
+						<li>Platform 11 <i>- limited service</i></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#">Alton</a>
+				<div class="entry-content is-hidden">
+					<ul class="platforms">
+						<li>Platform 9</li>
+						<li>Platform 11 <i>- limited service</i></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#">Amberley</a>
+				<div class="entry-content is-hidden">
+					<ul class="platforms">
+						<li>Platform 13</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+<?php include_once('inc/footer.php') ?>
