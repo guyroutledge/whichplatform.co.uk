@@ -19,7 +19,7 @@
 
 			<hgroup class="title">
 				<h1>Which Platform<span>?</span></h1>
-				<h2>at Clapham Junction</h2>
+				<h2 class="sub-heading">at Clapham Junction</h2>
 			</hgroup>
 
 		</header>

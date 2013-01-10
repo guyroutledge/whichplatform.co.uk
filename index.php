@@ -1,19 +1,19 @@
 <?php include_once('inc/header.php') ?>
 
 	<div class="search">
-		<nav class="nav-search">
-			<a href="#"></a>
-			<a href="#"></a>
-		</nav>
-		<form id="search-form">
-			<label for="search">Search:</label>
-			<input type="search" id="search" placeholder="eg. Gatwick Airport">
+		<ul class="nav nav-search">
+			<li><a href="#" class="is-active">Destinations</a></li>
+			<li><a href="#">Platforms</a></li>
+		</ul>
+		<form id="search-form" class="search-form">
+			<span class="input-container">
+				<label for="search">Search:</label>
+				<input type="search" id="search" placeholder="eg. Gatwick Airport">
+			</span>
 		</form>
 	</div>
 
-	<nav class="nav nav-alphabetical">
-		<?php include_once('inc/nav-alphabetical.php') ?>
-	</nav>
+	<?php include_once('inc/nav-alphabetical.php') ?>
 
 	<div id="result-container" class="result-container">
 		<ul class="destinations">

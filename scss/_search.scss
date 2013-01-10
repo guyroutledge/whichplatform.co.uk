@@ -1,0 +1,64 @@
+/**************************
+	$$ Search
+**************************/
+
+.search {
+	width:95%;
+	margin:0 auto $global-vertical-rhythm;
+}
+.nav-search {
+	margin:0 0 0.5em;
+	font-size:0.75em;
+
+	li:before { content:" | "; }
+	li:first-child:before { content:""; }
+
+}
+
+.search-form {
+	margin:0 0 $global-vertical-rhythm;
+
+	.input-container {
+		position:relative;
+		display:block;
+	}
+	[type=search] {
+		width:100%;
+		height:2em;
+		line-height:2em;
+		margin:0;
+
+		border:1px solid $color-border;
+		border-radius:0;
+		-webkit-appearance:none;
+
+		&:focus { outline: none; }
+	}
+	label { 
+		position:absolute;
+		top:0.5em;
+		left:0.5em;
+		color:$color-label;
+	}
+	@include placeholder {
+		padding:0.05em 0 0 3.5em;
+		color:#ccc;
+		font-style:italic;
+	}
+}
+
+.nav-alphabetical {
+
+	width:100%;
+	margin:0 auto $global-vertical-rhythm;
+	text-align:center;
+
+	a { 
+		display:inline-block;
+		margin:0.55em;
+		
+		text-transform:uppercase;
+	}
+
+
+}

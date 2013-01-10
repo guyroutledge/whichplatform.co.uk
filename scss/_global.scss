@@ -1,0 +1,45 @@
+/**************************
+    $$ Nav Module
+**************************/
+
+// Create all manner of horizontal lists of links
+// build upon this base module by adding modifier classes such as .stacked
+// modifier classes should be placed in the _global.scss partial
+
+.nav {
+    margin:0;
+    padding:0;
+    list-style:none;
+    @extend .group; // self clearfix
+    
+    li { float:left; }
+    a { display:inline-block; }
+}
+
+/**************************
+    $$ Clearfix
+**************************/
+
+.group:before,
+.group:after {
+    content:"";
+    display:table;
+}
+.group:after {
+    clear:both;
+}
+
+/**************************
+    $$ Helpers
+**************************/
+
+.is-active { color:$color-active; }
+
+.is-hidden { display:none; }
+.is-visible { display:block; }
+.is-visually-hidden { 
+    position:absolute; 
+    top:-99999px; 
+    left:-99999px; 
+}
+.screen-reader-text { text-indent:-9999px; }
