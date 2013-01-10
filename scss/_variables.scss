@@ -6,14 +6,18 @@
 	$$ Colours
 **************************/
 
-$color-brand:#000;
+$color-brand:#9a6bac; // purple
+$color-background:#f2f2f2; // lightest grey
 
 $color-link:#000;
 $color-link-visited:#000;
 $color-hover:#999;
 
-$color-heading:#000;
-$color-copy:#666;
+$color-heading:#1b1e31; // midnight blue
+$color-sub-heading:#999; // mid grey
+$color-copy:#eeeeee; // lighter grey
+$color-label:#666; // dark grey
+$color-disabled:#ccc; // light grey
 
 $color-border:#ccc;
 $color-form:#fff;
@@ -23,7 +27,7 @@ $color-form:#fff;
 	$$ Fonts
 **************************/
 
-$font-brand:'Georgia','Times New Roman',serif;
+$font-brand:'Gill Sans','Helvetica','Arial',serif;
 $font-copy:'Helvetica','Arial',sans-serif;
 
 

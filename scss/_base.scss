@@ -208,12 +208,8 @@ textarea {
 
 body {
     width:100%;
-    max-width:960px; // optionally set max-width for responsive design
+    max-width:480px; // optionally set max-width for responsive design
     margin:0px auto;
-}
 
-.page-wrap {
-    position:relative;
-    max-width:960px; // optionally set max-width for responsive design
-    z-index:1;
+    background:$color-background;
 }
