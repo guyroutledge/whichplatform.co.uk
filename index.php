@@ -28,7 +28,7 @@
 				</div>
 			</li>
 			<li>
-				<a href="#">Aldershot</a>
+				<a href="#" class="is-active">Aldershot</a>
 				<div class="entry-content">
 					<ul class="platforms">
 						<li>Platform 9</li>
