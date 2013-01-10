@@ -29,7 +29,7 @@
 			</li>
 			<li>
 				<a href="#">Aldershot</a>
-				<div class="entry-content is-hidden">
+				<div class="entry-content">
 					<ul class="platforms">
 						<li>Platform 9</li>
 						<li>Platform 11 <i>- limited service</i></li>
