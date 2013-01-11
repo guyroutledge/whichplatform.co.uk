@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="css/screen.css">
+        <link rel="stylesheet" href="css/jquery.autocomplete.css">
+        
         <script src="/js/libs/modernizr.2.6.2.js"></script>
     </head>
     <body>

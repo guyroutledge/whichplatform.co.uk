@@ -5,6 +5,7 @@
         
 		<?php // Scripts at the bottom for performance ?>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+		<script src="js/libs/jquery.autocomplete.js"></script>
 		<script src="js/app.js"></script>
 
 		<?php // Google Analytics: change UA-XXXXX-X to be your site's ID. ?>
