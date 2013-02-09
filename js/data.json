@@ -1,0 +1,84 @@
+{
+	"platforms" : [
+		{
+			"destinations" : [
+				"Imperial Wharf",
+				"Shepherd's Bush",
+				"Kensington Olympia",
+				"Hampstead Heath",
+				"Gospel Oak",
+				"Kensal Rise",
+				"Highbury & Islington",
+				"Dalson Kingsland",
+				"Hackney Wick",
+				"Homerton",
+				"Stratford",
+				"Wilseden Junction"
+			]
+		}
+		,{
+			"destinations" : [
+				"Highbury & Islington",
+				"Canada Water"
+			]
+		}
+		,{
+			"destinations" : [
+				"Queenstown Road Battersea",
+				"Vauxhall",
+				"London Waterloo"
+			]
+		}
+		,{
+			"destinations" : [
+				"Queenstown Road Battersea",
+				"Vauxhall",
+				"London Waterloo"
+			]
+		}
+		,{
+			"destinations" : [
+				"Addlestone",
+				"Ascot",
+				"Ashford (Middlesex)",
+				"Bagshot",
+				"Barnes",
+				"Barnes Bridge",
+				"Bracknell",
+				"Brentford",
+				"Camberley",
+				"Chertsey",
+				"Chiswick",
+				"Datchet",
+				"Egham",
+				"Feltham",
+				"Frimley",
+				"Hampton Wick",
+				"Hounslow",
+				"Isleworth",
+				"Kew Bridge",
+				"Kingston",
+				"Martins Heron",
+				"Mortlake",
+				"North Sheen",
+				"Putney",
+				"Reading",
+				"Richmond",
+				"St Margarets",
+				"Staines",
+				"Strawberry Hill",
+				"Sunningdale",
+				"Syon Lane",
+				"Teddington",
+				"Twickenham",
+				"Virginia Water",
+				"Wandsworth Town",
+				"Whitton",
+				"Windsor & Eton Riverside",
+				"Winnersh",
+				"Wokingham"
+			]
+		}
+
+	]
+}
