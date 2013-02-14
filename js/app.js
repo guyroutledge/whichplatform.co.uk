@@ -87,7 +87,7 @@ jQuery(function($){
 				$('#destinations').empty().append(destinations);
 			},
 			togglePlatforms: function(){
-				$('.destination').on('click', function(){
+				$('#destinations').delegate('a', 'click', function(){
 					var $this = $(this);
 
 					if ( $this.is('.is-active') ) {
