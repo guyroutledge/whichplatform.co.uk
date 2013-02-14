@@ -1,5 +1,5 @@
 <nav class="nav-alphabetical">
-	<a href="#" class="is-active">All</a>
+	<a href="#" class="is-active" data-filter="-1">All</a>
 	<a href="#">a</a>
 	<a href="#">b</a>
 	<a href="#">c</a>

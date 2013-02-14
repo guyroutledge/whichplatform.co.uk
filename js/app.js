@@ -48,7 +48,7 @@ jQuery(function($){
 				destinationsList.sort();
 
 				app.destinations.list = destinationsList;
-				app.destinations.displayDestinations();
+				app.destinations.displayDestinations(destinationsList);
 				app.autoComplete(destinationsList);
 			},
 			crossReferencePlatforms: function(destination){
@@ -74,8 +74,7 @@ jQuery(function($){
 				});
 				return platformsList;
 			},
-			displayDestinations: function(){
-				var list = app.destinations.list;
+			displayDestinations: function(list){
 				var destinations = '';
 
 				for ( var i = 0; i < list.length; i++ ) {
@@ -85,8 +84,7 @@ jQuery(function($){
 					destinations += '</ul></div></li>';
 				}
 
-				$('#destinations').append(destinations);
-				app.destinations.togglePlatforms();
+				$('#destinations').empty().append(destinations);
 			},
 			togglePlatforms: function(){
 				$('.destination').on('click', function(){
@@ -99,7 +97,34 @@ jQuery(function($){
 					}
 					return false;
 				});
+			},
+			filterResults: function(){
+				$('.nav-alphabetical a').on('click', function(){
+					// determine whether user is filtering by letter or
+					// all and filter the results accordingly
+
+					var list = app.destinations.list;
+					var filteredList = [];
+					var letter = $(this).data('filter') || $(this).text();
+
+					if ( letter !== -1 ) {
+						letter = letter.toUpperCase();
+						for ( var i = 0; i < list.length; i++ ) {
+							if ( list[i].match('^'+letter) ) {
+								filteredList.push(list[i]);
+							}
+						}
+						app.destinations.displayDestinations(filteredList);
+					} else {
+						app.destinations.displayDestinations(list);
+					}
+					return false;
+				});
 			}
+		},
+		bindClicks: function(){
+				app.destinations.filterResults();
+				app.destinations.togglePlatforms();
 		},
 		autoComplete: function(data){
 			$('#search-field').autocomplete({
@@ -108,6 +133,7 @@ jQuery(function($){
 		},
 		init: function(){
 			app.getData();
+			app.bindClicks();
 		}
 	};
 	// Kick things off
