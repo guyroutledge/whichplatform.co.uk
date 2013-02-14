@@ -48,11 +48,47 @@ jQuery(function($){
 				app.destinations.displayDestinations();
 				app.autoComplete(destinationsList);
 			},
+			crossReferencePlatforms: function(destination){
+				var data = app.data; // local reference
+				var platformsList = '';
+
+				// loop through each platform and test if the
+				// destination is found in the list of destinations
+				// served by this platform. If so, create a string of
+				// list items containing the platform number
+				$.each(data.platforms, function(i, v) {
+					var arr = this.destinations;
+					if ( $.inArray(destination, arr) !== -1 ) {
+						platformsList += '<li>Platform ' + (i+1) + '</li>';
+					}
+				});
+				return platformsList;
+			},
 			displayDestinations: function(){
 				var list = app.destinations.list;
+				var destinations = '';
+
 				for ( var i = 0; i < list.length; i++ ) {
-					$('#destinations').append('<li><a href="#">' + list[i] + '</a></li>');
+					destinations += '<li><a href="#' + list[i] + '" class="destination">' + list[i] + '</a>';
+					destinations += '<div class="entry-content is-hidden"><ul>';
+					destinations += app.destinations.crossReferencePlatforms(list[i]);
+					destinations += '</ul></div></li>';
 				}
+
+				$('#destinations').append(destinations);
+				app.destinations.togglePlatforms();
+			},
+			togglePlatforms: function(){
+				$('.destination').on('click', function(){
+					var $this = $(this);
+
+					if ( $this.is('.is-active') ) {
+						$this.next('.entry-content').slideUp().end().removeClass('is-active');
+					} else {
+						$this.addClass('is-active').next('.entry-content').slideDown();
+					}
+					return false;
+				});
 			}
 		},
 		autoComplete: function(data){
