@@ -7,7 +7,7 @@
 	margin:0 auto $global-vertical-rhythm;
 	padding:0;
 	list-style:none;
-	
+
 	& > li > a {
 		display:block;
 		padding:0.5em;
@@ -15,12 +15,15 @@
 		color:$color-heading;
 		@include font(1.25em, 1.5em);
 		@include text-shadow(0px 1px 0px #666);
-		
+
 		border-bottom:1px solid #fff;
 		@include background(linear-gradient($color-brand, darken($color-brand, 25%)));
+		@include transition(all 0.2s ease);
 
-		&.is-active { 
-			color:#eee; 
+		&.is-active,
+		&:hover,
+		&:focus {
+			color:#eee;
 			@include text-shadow(0px 1px 0px #000);
 		}
 	}
@@ -29,10 +32,10 @@
 		padding:0.75em 0.5em 0.5em 0.75em;
 		background:darken($color-brand, 25%);
 
-		ul { 
+		ul {
 			margin:0;
 			padding:0;
-			list-style:none; 
+			list-style:none;
 		}
 		li {
 			margin:0 0 0.75em;
