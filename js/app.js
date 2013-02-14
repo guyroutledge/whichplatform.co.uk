@@ -21,14 +21,16 @@ jQuery(function($){
 				var destinationsList = []; // an array that will eventually hold a de-duped list of all destinations
 				var tmpArr = []; // a temp array to hold all the destinations
 				var tmpObj = {}; // a temp object to produce a de-duped list of destinations
-				var destination; // placeholder for building destinationsList
+				var destination; // placeholder
 				var i, j, k; // counters
 
 				// Create an array of all the destinations, including
 				// duplicates by looping through each platform
 				for (i = 0; i < platforms.length; i++) {
 					for (j = 0; j < platforms[i].destinations.length; j++) {
-						tmpArr.push(platforms[i].destinations[j]);
+						destination = platforms[i].destinations[j];
+						destination = destination.replace(/#/, '');
+						tmpArr.push(destination);
 					}
 				}
 				// Add each destination from tmpArr as a key to tmpObj
@@ -39,6 +41,7 @@ jQuery(function($){
 				}
 				// Turn tmpObj back into an array of destinations to
 				// pass as local data to jquery.autocomplete
+				destination = '';
 				for ( destination in tmpObj ) {
 					destinationsList.push(destination);
 				}
@@ -58,8 +61,15 @@ jQuery(function($){
 				// list items containing the platform number
 				$.each(data.platforms, function(i, v) {
 					var arr = this.destinations;
-					if ( $.inArray(destination, arr) !== -1 ) {
-						platformsList += '<li>Platform ' + (i+1) + '</li>';
+					for ( var j = 0; j < arr.length; j++ ) {
+						if ( arr[j].search(destination) !== -1 ) {
+							platformsList += '<li>Platform ' + (i+1) + '';
+							if ( arr[j].match(/#$/) ) {
+								platformsList += ' - <em>limited service</em></li>';
+							} else {
+							platformsList += '</li>';
+							}
+						}
 					}
 				});
 				return platformsList;
