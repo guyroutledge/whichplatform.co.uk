@@ -42,11 +42,17 @@ jQuery(function($){
 				for ( destination in tmpObj ) {
 					destinationsList.push(destination);
 				}
+				destinationsList.sort();
+
 				app.destinations.list = destinationsList;
+				app.destinations.displayDestinations();
 				app.autoComplete(destinationsList);
 			},
-			displayDestinations: {
-
+			displayDestinations: function(){
+				var list = app.destinations.list;
+				for ( var i = 0; i < list.length; i++ ) {
+					$('#destinations').append('<li><a href="#">' + list[i] + '</a></li>');
+				}
 			}
 		},
 		autoComplete: function(data){

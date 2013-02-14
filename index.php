@@ -16,6 +16,13 @@
 	<?php include_once('inc/nav-alphabetical.php') ?>
 
 	<div id="result-container" class="result-container">
+		<ul id="destinations" class="destinations">
+			<?php // populated with destinations list ?>
+		</ul>
+
+
+
+
 		<ul class="destinations">
 			<li>
 				<a href="#">Addlestone</a>
@@ -24,32 +31,6 @@
 						<li>Platform 5</li>
 						<li>Platform 6</li>
 						<li>Platform 11</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<a href="#" class="is-active">Aldershot</a>
-				<div class="entry-content">
-					<ul class="platforms">
-						<li>Platform 9</li>
-						<li>Platform 11 <i>- limited service</i></li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<a href="#">Alton</a>
-				<div class="entry-content is-hidden">
-					<ul class="platforms">
-						<li>Platform 9</li>
-						<li>Platform 11 <i>- limited service</i></li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<a href="#">Amberley</a>
-				<div class="entry-content is-hidden">
-					<ul class="platforms">
-						<li>Platform 13</li>
 					</ul>
 				</div>
 			</li>
