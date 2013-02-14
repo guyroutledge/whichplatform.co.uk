@@ -17,23 +17,7 @@
 
 	<div id="result-container" class="result-container">
 		<ul id="destinations" class="destinations">
-			<?php // populated with destinations list ?>
-		</ul>
-
-
-
-
-		<ul class="destinations">
-			<li>
-				<a href="#">Addlestone</a>
-				<div class="entry-content is-hidden">
-					<ul class="platforms">
-						<li>Platform 5</li>
-						<li>Platform 6</li>
-						<li>Platform 11</li>
-					</ul>
-				</div>
-			</li>
+			<?php // populated with results ?>
 		</ul>
 	</div>
 
