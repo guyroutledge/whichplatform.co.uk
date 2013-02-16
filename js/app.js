@@ -48,6 +48,7 @@ jQuery(function($){
 				destinationsList.sort();
 
 				app.destinations.list = destinationsList;
+				app.destinations.disableLetters();
 				app.destinations.displayDestinations(destinationsList);
 				app.autoComplete(destinationsList);
 			},
@@ -103,25 +104,29 @@ jQuery(function($){
 			},
 			filterByLetter: function(){
 				$('.nav-alphabetical a').on('click', function(){
-					// determine whether user is filtering by letter or
-					// all and filter the results accordingly
-
-					var list = app.destinations.list;
-					var filteredList = [];
-					var letter = $(this).data('filter') || $(this).text();
-
-					if ( letter !== -1 ) {
-						letter = letter.toUpperCase();
-						for ( var i = 0; i < list.length; i++ ) {
-							if ( list[i].match('^'+letter) ) {
-								filteredList.push(list[i]);
-							}
-						}
-						app.destinations.displayDestinations(filteredList);
+					if ( $(this).attr('disabled') ) {
+						return false;
 					} else {
-						app.destinations.displayDestinations(list);
+						// determine whether user is filtering by letter or
+						// all and filter the results accordingly
+
+						var list = app.destinations.list;
+						var filteredList = [];
+						var letter = $(this).data('filter') || $(this).text();
+
+						if ( letter !== -1 ) {
+							letter = letter.toUpperCase();
+							for ( var i = 0; i < list.length; i++ ) {
+								if ( list[i].match('^'+letter) ) {
+									filteredList.push(list[i]);
+								}
+							}
+							app.destinations.displayDestinations(filteredList);
+						} else {
+							app.destinations.displayDestinations(list);
+						}
+						return false;
 					}
-					return false;
 				});
 			},
 			filterAutocomplete: function(item){
@@ -135,10 +140,55 @@ jQuery(function($){
 				app.destinations.displayDestinations(filteredList, function(){
 					$('.destination').first().trigger('click');
 				});
+			},
+			disableLetters: function(){
+				var list = app.destinations.list;
+				var alphabet = {
+					'A' : false,
+					'B' : false,
+					'C' : false,
+					'D' : false,
+					'E' : false,
+					'F' : false,
+					'G' : false,
+					'H' : false,
+					'I' : false,
+					'J' : false,
+					'K' : false,
+					'L' : false,
+					'M' : false,
+					'N' : false,
+					'O' : false,
+					'P' : false,
+					'Q' : false,
+					'R' : false,
+					'S' : false,
+					'T' : false,
+					'U' : false,
+					'V' : false,
+					'W' : false,
+					'X' : false,
+					'Y' : false,
+					'Z' : false
+				};
+				for ( var letter in alphabet ) {
+					for ( var i = 0; i < list.length; i++ ) {
+						if ( list[i].match('^'+letter) ) {
+							alphabet[''+letter+''] = true;
+							break;
+						}
+					}
+				}
+				for ( var letter in alphabet ) {
+					if ( alphabet[letter] == false ) {
+						console.log(letter);
+						$('#'+letter+'').attr('disabled', 'disabled');
+					}
+				}
+				app.destinations.filterByLetter();
 			}
 		},
 		bindClicks: function(){
-				app.destinations.filterByLetter();
 				app.destinations.togglePlatforms();
 		},
 		autoComplete: function(data){
@@ -153,7 +203,7 @@ jQuery(function($){
 			onItemSelect: function(item) {
 				app.destinations.filterAutocomplete(item.value);
 			},
-			mustMatch: false,
+			mustMatch: true,
 			maxItemsToShow: 5,
 			selectFirst: false,
 			autoFill: false,

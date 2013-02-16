@@ -83,13 +83,21 @@
 		color:#666;
 		text-transform:uppercase;
 		border-bottom:1px solid transparent;
-	}
-	.is-active {
-		color:$color-brand;
-		border-bottom:1px solid $color-brand;
-	}
+		@include transition(all 0.3s ease);
 
-
+		&.is-active,
+		&:hover,
+		&:focus {
+			color:$color-brand;
+			outline:none;
+			border-bottom:1px solid $color-brand;
+		}
+	}
+	[disabled],
+	[disabled]:hover {
+		color:#ccc;
+		border-bottom:1px solid transparent;
+	}
 }
 
 /**************************
