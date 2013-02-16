@@ -7,8 +7,8 @@
 		</ul>
 		<form id="search-form" class="search-form">
 			<span class="input-container">
-				<label for="search-field">Search:</label>
 				<input type="search" id="search-field" placeholder="eg. Gatwick Airport">
+				<label for="search-field">Search:</label>
 			</span>
 		</form>
 	</div>

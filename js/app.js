@@ -74,7 +74,7 @@ jQuery(function($){
 				});
 				return platformsList;
 			},
-			displayDestinations: function(list){
+			displayDestinations: function(list, callback){
 				var destinations = '';
 
 				for ( var i = 0; i < list.length; i++ ) {
@@ -85,6 +85,9 @@ jQuery(function($){
 				}
 
 				$('#destinations').empty().append(destinations);
+				if ( callback ) {
+					callback.call(this);
+				}
 			},
 			togglePlatforms: function(){
 				$('#destinations').delegate('a', 'click', function(){
@@ -98,7 +101,7 @@ jQuery(function($){
 					return false;
 				});
 			},
-			filterResults: function(){
+			filterByLetter: function(){
 				$('.nav-alphabetical a').on('click', function(){
 					// determine whether user is filtering by letter or
 					// all and filter the results accordingly
@@ -120,15 +123,41 @@ jQuery(function($){
 					}
 					return false;
 				});
+			},
+			filterAutocomplete: function(item){
+				var list = app.destinations.list;
+				var filteredList = [];
+				for ( var i = 0; i < list.length; i++ ) {
+					if ( list[i].match(item) ) {
+						filteredList.push(list[i]);
+					}
+				}
+				app.destinations.displayDestinations(filteredList, function(){
+					$('.destination').first().trigger('click');
+				});
 			}
 		},
 		bindClicks: function(){
-				app.destinations.filterResults();
+				app.destinations.filterByLetter();
 				app.destinations.togglePlatforms();
 		},
 		autoComplete: function(data){
-			$('#search-field').autocomplete({
-				"data" : data
+			$('#search-field').focus(function(){
+				$(this).parent().addClass('is-focus');
+			}).blur(function(){
+				if ( $(this).val() === '' ) {
+					$(this).parent().removeClass('is-focus');
+				}
+			}).autocomplete({
+				"data" : data,
+			onItemSelect: function(item) {
+				app.destinations.filterAutocomplete(item.value);
+			},
+			mustMatch: false,
+			maxItemsToShow: 5,
+			selectFirst: false,
+			autoFill: false,
+			selectOnly: true,
 			});
 		},
 		init: function(){

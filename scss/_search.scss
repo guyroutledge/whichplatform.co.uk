@@ -10,13 +10,13 @@
 	margin:0 0 0.5em;
 	font-size:0.75em;
 
-	li:after { 
-		content:" | "; 
+	li:after {
+		content:" | ";
 		margin:0 0.3em 0 0;
 		color:#999;
 	}
-	li:last-child:after { 
-		content:""; 
+	li:last-child:after {
+		content:"";
 		margin:0;
 	}
 
@@ -31,6 +31,12 @@
 	.input-container {
 		position:relative;
 		display:block;
+		&.is-focus {
+			label { opacity:0; }
+			@include placeholder {
+				padding-left:0;
+			}
+		}
 	}
 	[type=search] {
 		width:100%;
@@ -38,22 +44,28 @@
 		line-height:2em;
 		margin:0;
 
+		color:$color-label;
 		border:1px solid $color-border;
 		border-radius:0;
 		-webkit-appearance:none;
 
-		&:focus { outline: none; }
+		&:focus {
+			outline: none;
+		}
 	}
-	label { 
+	label {
 		position:absolute;
 		top:0.5em;
 		left:0.5em;
 		color:$color-label;
+		opacity:1;
+		@include transition(all 0.5s ease);
 	}
 	@include placeholder {
 		padding:0.05em 0 0 3.5em;
 		color:#ccc;
 		font-style:italic;
+		@include transition(all 0.5s ease);
 	}
 }
 
@@ -63,17 +75,17 @@
 	margin:0 auto $global-vertical-rhythm;
 	text-align:center;
 
-	a { 
+	a {
 		display:inline-block;
 		margin:0.55em 0.55em 0.35em;
 		padding-bottom:0.2em; // add space for underline on active
-		
+
 		color:#666;
 		text-transform:uppercase;
 		border-bottom:1px solid transparent;
 	}
-	.is-active { 
-		color:$color-brand; 
+	.is-active {
+		color:$color-brand;
 		border-bottom:1px solid $color-brand;
 	}
 
@@ -87,24 +99,24 @@
 .acResults {
 	@include box-sizing(content-box); // so the script calculates the correct width
 	padding:0;
-	
+
 	border: 1px solid $color-border;
 	border-top:0;
 	background-color: $color-form;
-	
+
 	overflow: hidden;
 }
 
 .acResults ul {
 	margin: 0px;
 	padding: 0px;
-	list-style: none;	
+	list-style: none;
 }
 
 .acResults li {
 	margin:0;
 	padding:0.75em;
-	
+
 	font:$font-copy;
 	font-size:14px;
 
