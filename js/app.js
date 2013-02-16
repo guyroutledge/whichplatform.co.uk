@@ -55,6 +55,9 @@ jQuery(function($){
 			crossReferencePlatforms: function(destination){
 				var data = app.data; // local reference
 				var platformsList = '';
+				// escape the brackets found in some destinations so
+				// that they will be corrected matched below
+				destination= destination.replace(/([\(])+(.*)+([\)])+/, '\\$1$2\\$3');
 
 				// loop through each platform and test if the
 				// destination is found in the list of destinations
@@ -63,7 +66,9 @@ jQuery(function($){
 				$.each(data.platforms, function(i, v) {
 					var arr = this.destinations;
 					for ( var j = 0; j < arr.length; j++ ) {
-						if ( arr[j].search(destination) !== -1 ) {
+						// match the end of the line to avoid "Barnes" matching
+						// both "Barnes" and "Barnes Bridge" (for example)
+						if ( arr[j].match(destination+'$') ) {
 							platformsList += '<li>Platform ' + (i+1) + '';
 							if ( arr[j].match(/#$/) ) {
 								platformsList += ' - <em>limited service</em></li>';
