@@ -17,6 +17,7 @@
 		@include text-shadow(0px 1px 0px #666);
 
 		border-bottom:1px solid #fff;
+		background:$color-brand;
 		@include background(linear-gradient($color-brand, darken($color-brand, 25%)));
 		@include transition(all 0.2s ease);
 
@@ -24,6 +25,7 @@
 		&:hover,
 		&:focus {
 			color:#eee;
+			outline:none;
 			@include text-shadow(0px 1px 0px #000);
 		}
 	}
