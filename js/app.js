@@ -188,7 +188,6 @@ jQuery(function($){
 				}
 				for ( var letter in alphabet ) {
 					if ( alphabet[letter] == false ) {
-						console.log(letter);
 						$('#'+letter+'').attr('disabled', 'disabled');
 					}
 				}
