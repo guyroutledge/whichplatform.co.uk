@@ -1,8 +1,19 @@
 		<footer class="app-footer">
-			<?php // copyright, sharing links, attribution, licensing ?>
+			<p><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a></p>
+			<script>
+				!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+					if(!d.getElementById(id)){
+						js=d.createElement(s);
+						js.id=id;
+						js.src="//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore(js,fjs);
+					}
+				}(document,"script","twitter-wjs");
+			</script>
+			<p class="footnote">&copy; <?php echo date('Y') ?> <a href="http://www.guyroutledge.co.uk">Guy Routledge</a></p>
 		</footer>
 
-        
+
 		<?php // Scripts at the bottom for performance ?>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 		<script src="js/libs/jquery.autocomplete.js"></script>
