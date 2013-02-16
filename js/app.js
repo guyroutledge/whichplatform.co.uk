@@ -104,16 +104,18 @@ jQuery(function($){
 			},
 			filterByLetter: function(){
 				$('.nav-alphabetical a').on('click', function(){
+					var list = app.destinations.list;
+					var filteredList = [];
+					var letter = $(this).data('filter') || $(this).text();
+
 					if ( $(this).attr('disabled') ) {
 						return false;
 					} else {
+						$('.nav-alphabetical a').removeClass('is-active');
+						$(this).addClass('is-active');
+
 						// determine whether user is filtering by letter or
 						// all and filter the results accordingly
-
-						var list = app.destinations.list;
-						var filteredList = [];
-						var letter = $(this).data('filter') || $(this).text();
-
 						if ( letter !== -1 ) {
 							letter = letter.toUpperCase();
 							for ( var i = 0; i < list.length; i++ ) {
