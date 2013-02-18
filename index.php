@@ -2,8 +2,8 @@
 
 	<div class="search">
 		<ul class="nav nav-search">
-			<li><a href="#" class="is-active">Destinations</a></li>
-			<li><a href="#">Platforms</a></li>
+			<li><a href="#" class="destinations is-active">Destinations</a></li>
+			<li><a href="#" class="platforms">Platforms</a></li>
 		</ul>
 		<form id="search-form" class="search-form">
 			<span class="input-container">
@@ -15,10 +15,8 @@
 
 	<?php include_once('inc/nav-alphabetical.php') ?>
 
-	<div id="result-container" class="result-container">
-		<ul id="destinations" class="destinations">
-			<?php // populated with results ?>
-		</ul>
-	</div>
+	<ul id="results-container" class="results">
+		<?php // populated with results ?>
+	</ul>
 
 <?php include_once('inc/footer.php') ?>

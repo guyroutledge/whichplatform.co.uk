@@ -81,22 +81,36 @@ jQuery(function($){
 				return platformsList;
 			},
 			displayDestinations: function(list, callback){
-				var destinations = '';
+				var i = 0;
+				var len = list.length;
+				var selector = $('#results-container');
 
-				for ( var i = 0; i < list.length; i++ ) {
-					destinations += '<li><a href="#' + list[i] + '" class="destination">' + list[i] + '</a>';
-					destinations += '<div class="entry-content is-hidden"><ul>';
-					destinations += app.destinations.crossReferencePlatforms(list[i]);
-					destinations += '</ul></div></li>';
-				}
+				// start with an empty container
+				selector.empty();
 
-				$('#destinations').empty().append(destinations);
-				if ( callback ) {
+				if ( len > 10 ) $('<div class="overlay"></div>').appendTo('body').fadeIn(250);
+
+				(function addNext(){
+					if ( i < len ) {
+						selector.append(
+							'<li><a href="#' + list[i] + '" class="destination">' + list[i] + '</a>' +
+							'<div class="entry-content is-hidden"><ul>' +
+							app.destinations.crossReferencePlatforms(list[i]) +
+							'</ul></div></li>'
+						);
+						i++;
+						setTimeout(addNext, 5);
+					} else {
+						$('.overlay').fadeOut(500).remove();
+					}
+				})();
+
+				if ( callback && typeof(callback) === 'function' ) {
 					callback.call(this);
 				}
 			},
-			togglePlatforms: function(){
-				$('#destinations').delegate('a', 'click', function(){
+			toggleContent: function(){
+				$('#results-container').delegate('a', 'click', function(){
 					var $this = $(this);
 
 					if ( $this.is('.is-active') ) {
@@ -194,8 +208,73 @@ jQuery(function($){
 				app.destinations.filterByLetter();
 			}
 		},
+		platforms: {
+			listDestinations: function(platformNumber){
+				var list = app.data.platforms[platformNumber].destinations; // local reference
+				var destinationsList = '';
+
+				if ( list.length === 0 ) {
+					destinationsList += '<li>No destinations from this platform</li>'
+				}
+
+				for ( var i = 0; i < list.length; i++ ) {
+					destinationsList += '<li>' + list[i].replace(/#$/, '') + '';
+					if ( list[i].match(/#$/) ) {
+						destinationsList += ' - <em>limited&nbsp;service</em></li>';
+					} else {
+						destinationsList += '</li>';
+					}
+				}
+
+				return destinationsList;
+			},
+			displayPlatforms: function(){
+				var i = 0;
+				var list = app.data.platforms;
+				var len = list.length;
+				var selector = $('#results-container');
+
+				// start with an empty container
+				selector.empty();
+
+				$('<div class="overlay"></div>').appendTo('body').fadeIn(250);
+
+				(function addNext(){
+					if ( i < len ) {
+						selector.append(
+							'<li><a href="#platform' + (i+1) + '" class="platform">Platform ' + (i+1) + '</a>' +
+							'<div class="entry-content is-hidden"><ul>' +
+							app.platforms.listDestinations(i) +
+							'</ul></div></li>'
+						);
+						i++;
+						setTimeout(addNext, 5);
+					} else {
+						$('.overlay').fadeOut(500).remove();
+					}
+				})();
+
+			},
+		},
+		switchView: function(){
+			$('.nav-search a').on('click', function(){
+				console.log('clicked');
+				if ( $(this).is('.is-active') ) {
+					return false;
+				}
+				$('.nav-search a').removeClass('is-active');
+				$(this).addClass('is-active');
+				if ( $(this).is('.destinations') ) {
+					app.destinations.displayDestinations(app.destinations.list);
+				} else if ( $(this).is('.platforms') ) {
+					app.platforms.displayPlatforms();
+				}
+				return false;
+			});
+		},
 		bindClicks: function(){
-				app.destinations.togglePlatforms();
+			app.destinations.toggleContent();
+			app.switchView();
 		},
 		autoComplete: function(data){
 			$('#search-field').focus(function(){

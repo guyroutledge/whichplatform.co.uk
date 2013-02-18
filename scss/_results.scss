@@ -2,14 +2,12 @@
 	$$ Results
 **************************/
 
-.destinations {
+.results {
 	width:95%;
 	min-height:50px; // space for spinner
 	margin:0 auto $global-vertical-rhythm;
 	padding:0;
 	list-style:none;
-
-	background:url('../img/indicator.gif') center 25px no-repeat;
 
 	& > li > a {
 		display:block;
@@ -45,6 +43,7 @@
 		li {
 			margin:0 0 0.75em;
 			font-size:0.875em;
+			line-height:1.25em;
 		}
 	}
 
