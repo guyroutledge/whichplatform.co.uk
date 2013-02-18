@@ -290,6 +290,7 @@ jQuery(function($){
 			onItemSelect: function(item) {
 				app.destinations.filterAutocomplete(item.value);
 			},
+			preventDefaultReturn: 2,
 			mustMatch: true,
 			maxItemsToShow: 5,
 			selectFirst: false,
