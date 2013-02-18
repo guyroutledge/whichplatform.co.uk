@@ -266,7 +266,9 @@ jQuery(function($){
 				$(this).addClass('is-active');
 				if ( $(this).is('.destinations') ) {
 					app.destinations.displayDestinations(app.destinations.list);
+					$('.nav-alphabetical, .search-form').slideDown();
 				} else if ( $(this).is('.platforms') ) {
+					$('.nav-alphabetical, .search-form').slideUp();
 					app.platforms.displayPlatforms();
 				}
 				return false;
