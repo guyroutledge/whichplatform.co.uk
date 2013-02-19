@@ -12,7 +12,8 @@
 //**************************
 
 .about {
-	margin-top:-115%;
+	height:400px;
+	margin-top:-368px;
 	margin-bottom:$global-vertical-rhythm/2;
 	padding:$global-padding $global-padding 0;
 
@@ -58,6 +59,10 @@
 	}
 }
 
+//*************************
+//  	$$ Title
+//**************************
+
 .title {
 	float:right;
 	margin:0 $global-padding $global-vertical-rhythm 0;
@@ -76,8 +81,8 @@
 	&:before {
 		content:"";
 		position:absolute;
-		top:20px;
-		left:-45px;
+		top:-15px;
+		left:-50px;
 
 		width:370px;
 		height:80px;
