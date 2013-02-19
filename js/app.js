@@ -49,8 +49,11 @@ jQuery(function($){
 
 				app.destinations.list = destinationsList;
 				app.destinations.disableLetters();
-				app.destinations.displayDestinations(destinationsList);
 				app.autoComplete(destinationsList);
+				// start viewing just destinations beginning with A
+				// instead of hammering the user with all the data (and
+				// the performance hit of processing it) from the get go
+				$('#A').trigger('click');
 			},
 			crossReferencePlatforms: function(destination){
 				var data = app.data; // local reference

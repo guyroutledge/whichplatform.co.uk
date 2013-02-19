@@ -1,6 +1,6 @@
 <nav class="nav-alphabetical">
-	<a href="#" class="is-active" data-filter="-1">All</a>
-	<a href="#" id="A">a</a>
+	<a href="#" data-filter="-1">All</a>
+	<a href="#" id="A" class="is-active">a</a>
 	<a href="#" id="B">b</a>
 	<a href="#" id="C">c</a>
 	<a href="#" id="D">d</a>
