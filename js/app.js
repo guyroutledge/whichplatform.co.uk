@@ -285,6 +285,7 @@ jQuery(function($){
 				} else {
 					$('#nav-menu-text').text('about');
 				}
+				return false;
 			});
 		},
 		bindClicks: function(){
