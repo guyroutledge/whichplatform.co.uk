@@ -261,16 +261,19 @@ jQuery(function($){
 		},
 		switchView: function(){
 			$('.nav-search a').on('click', function(){
-				console.log('clicked');
-				if ( $(this).is('.is-active') ) {
+				var clicked = $(this);
+
+				if ( clicked.is('.is-active') ) {
 					return false;
 				}
 				$('.nav-search a').removeClass('is-active');
-				$(this).addClass('is-active');
-				if ( $(this).is('.destinations') ) {
-					app.destinations.displayDestinations(app.destinations.list);
+				clicked.addClass('is-active');
+				if ( clicked.is('.destinations') ) {
+					// trigger click on whatever the user was previously
+					// viewing in "destinations" view
+					$('.nav-alphabetical .is-active').trigger('click');
 					$('.nav-alphabetical, .search-form').slideDown();
-				} else if ( $(this).is('.platforms') ) {
+				} else if ( clicked.is('.platforms') ) {
 					$('.nav-alphabetical, .search-form').slideUp();
 					app.platforms.displayPlatforms();
 				}
