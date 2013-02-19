@@ -14,10 +14,22 @@
     <body>
 
     	<header class="app-header">
-	        
-	        <nav class="nav-menu">
-	            <a href="#"><i class="icon-nav"></i> menu</a>
-			</nav>
+			<section class="about">
+
+				<h1 class="about-title">About</h1>
+
+				<p>Beat the crowds and find the right platform on the go with this handy guide
+				to Which Platform at Clapham Junction station.</p>
+				<p>New features in the pipeline include icons for popular interchanges like London Underground,
+				National Rail, Croydon Tramlink, airports and platform ameneties like coffee shops and help
+				points. I'm also working on integrating live departure information as part of a future release.</p>
+				<p>If you found this useful, give it a tweet or tell you friends! Thanks!</p>
+
+				<nav class="nav-menu">
+					<a href="#"><i class="icon-nav"></i> <span id="nav-menu-text">about</span></a>
+				</nav>
+
+			</section>
 
 			<hgroup class="title">
 				<h1>Which Platform<span>?</span></h1>

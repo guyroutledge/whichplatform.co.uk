@@ -7,17 +7,35 @@
 	@extend .group;
 }
 
+//*************************
+//  	$$ About
+//**************************
+
+.about {
+	margin-top:-115%;
+	margin-bottom:$global-vertical-rhythm/2;
+	padding:$global-padding $global-padding 0;
+
+	color:$color-menu;
+	background:#fff;
+	border:1px solid #ddd;
+	border-top:0;
+
+	@include transition(all 1s ease);
+
+	&.is-open { margin-top:0px; }
+}
+.about-title {
+	@extend %h2;
+	margin-bottom:0.5em;
+}
+
 .nav-menu {
 	height:2em;
 	line-height:2em;
-	margin:0 0 $global-vertical-rhythm;
-
-	background:rgba(255,255,255,0.75);
-	border-bottom:1px solid #ddd;
 
 	a {
 		display:inline-block;
-		margin:0 0 0 $global-padding;
 		color:$color-menu;
 		font-size:0.75em;
 	}
@@ -38,7 +56,6 @@
 					0px 16px 0px #fff,
 					0px 21px 0px $color-menu;
 	}
-
 }
 
 .title {

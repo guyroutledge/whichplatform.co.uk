@@ -29,6 +29,7 @@
 	margin:0 0 $global-vertical-rhythm;
 
 	.input-container {
+		line-height:$global-vertical-rhythm/2;
 		position:relative;
 		display:block;
 		&.is-focus {
@@ -73,6 +74,7 @@
 
 	width:100%;
 	margin:0 auto $global-vertical-rhythm;
+	line-height:$global-vertical-rhythm/2;
 	text-align:center;
 
 	a {

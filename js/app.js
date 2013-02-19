@@ -274,8 +274,19 @@ jQuery(function($){
 				return false;
 			});
 		},
+		toggleAbout: function(){
+			$('.nav-menu').on('click', function(){
+				$('.about').toggleClass('is-open');
+				if ( $('.about').is('.is-open') ) {
+					$('#nav-menu-text').text('close');
+				} else {
+					$('#nav-menu-text').text('about');
+				}
+			});
+		},
 		bindClicks: function(){
 			app.destinations.toggleContent();
+			app.toggleAbout();
 			app.switchView();
 		},
 		autoComplete: function(data){
