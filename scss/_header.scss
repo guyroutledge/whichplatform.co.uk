@@ -3,6 +3,7 @@
 **************************/
 
 .app-header {
+	position:relative;
 	@extend .group;
 }
 
@@ -49,9 +50,23 @@
 		line-height:1;
 		margin:0;
 	}
-	.sub-heading { 
+	.sub-heading {
 		@extend %h3;
 		font-family:$font-copy;
 		color:$color-sub-heading;
+	}
+
+	&:before {
+		content:"";
+		position:absolute;
+		top:20px;
+		left:-45px;
+
+		width:370px;
+		height:80px;
+		background:url('../img/logo-light.svg');
+
+		@include rotate(-20deg);
+		z-index:-1;
 	}
 }
