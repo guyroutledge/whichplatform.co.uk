@@ -71,7 +71,7 @@ jQuery(function($){
 					for ( var j = 0; j < arr.length; j++ ) {
 						// match the end of the line to avoid "Barnes" matching
 						// both "Barnes" and "Barnes Bridge" (for example)
-						if ( arr[j].match(destination+'$') ) {
+						if ( arr[j].match(destination+'(#)?$') ) {
 							platformsList += '<li>Platform ' + (i+1) + '';
 							if ( arr[j].match(/#$/) ) {
 								platformsList += ' - <em>limited service</em></li>';
