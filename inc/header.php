@@ -21,8 +21,9 @@
 			to Which Platform at Clapham Junction station.</p>
 			<p>New features in the pipeline include icons for popular interchanges like London Underground,
 			National Rail, Croydon Tramlink, airports and platform ameneties like coffee shops and help
-			points. I'm also working on integrating live departure information as part of a future version.</p>
-			<p>If you found this useful, give it a tweet or tell you friends! Thanks!</p>
+			points. Also, keep your eyes peeled for live departure information, planned as part of a future
+			relase.</p>
+			<p>If you found this useful, please give it a tweet and tell you friends!</p>
 
 			<nav class="nav-menu">
 				<a href="#"><i class="icon-nav"></i> <span id="nav-menu-text">about</span></a>
