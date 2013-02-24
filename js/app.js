@@ -133,6 +133,7 @@ jQuery(function($){
 					if ( $(this).attr('disabled') ) {
 						return false;
 					} else {
+						$('#search-field').val('');
 						$('.nav-alphabetical a').removeClass('is-active');
 						$(this).addClass('is-active');
 
@@ -271,7 +272,11 @@ jQuery(function($){
 				if ( clicked.is('.destinations') ) {
 					// trigger click on whatever the user was previously
 					// viewing in "destinations" view
-					$('.nav-alphabetical .is-active').trigger('click');
+					if ( $('.nav-alphabetical .is-active').length ) {
+						$('.nav-alphabetical .is-active').trigger('click');
+					} else {
+						$('.nav-alphabetical #A').trigger('click');
+					}
 					$('.nav-alphabetical, .search-form').slideDown();
 				} else if ( clicked.is('.platforms') ) {
 					$('.nav-alphabetical, .search-form').slideUp();
@@ -306,6 +311,7 @@ jQuery(function($){
 			}).autocomplete({
 				"data" : data,
 			onItemSelect: function(item) {
+				$('.nav-alphabetical a').removeClass('is-active');
 				app.destinations.filterAutocomplete(item.value);
 			},
 			preventDefaultReturn: 2,
