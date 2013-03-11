@@ -2,17 +2,25 @@
 	"platforms" : [
 		{
 			"destinations" : [
+				"Brondesbury Park",
+				"Brondesbury",
 				"Camden Road",
+				"Caledonia Road & Barnsbury",
 				"Canonbury",
 				"Dalson Kingsland",
+				"Finchley Road & Frognal",
 				"Gospel Oak",
 				"Hackney Central",
+				"Hackney Wick",
+				"Homerton",
 				"Hampstead Heath",
 				"Highbury & Islington",
 				"Imperial Wharf",
+				"Kensal Rise",
+				"Kentish Town West",
 				"Kensington Olympia",
 				"Shepherds Bush",
-				"Stratford",
+				"Stratford London",
 				"West Brompton",
 				"West Hampstead",
 				"Wilseden Junction"
