@@ -1,5 +1,6 @@
 		<footer class="app-footer">
-			<p><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a></p>
+			<p><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><br>
+			<a href="https://twitter.com/guyroutledge" class="twitter-follow-button" data-show-count="false">Follow @guyroutledge</a></p>
 			<script>
 				!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
 					if(!d.getElementById(id)){
@@ -10,7 +11,7 @@
 					}
 				}(document,"script","twitter-wjs");
 			</script>
-			<p class="footnote">&copy; <?php echo date('Y') ?> <a href="http://www.guyroutledge.co.uk">Guy Routledge</a></p>
+			<p class="footnote">&copy; <?php echo date('Y') ?> Lovingly created by <a href="http://www.guyroutledge.co.uk">Guy Routledge</a></p>
 		</footer>
 
 
